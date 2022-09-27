@@ -14,6 +14,7 @@ public class Driver {
         gumballMachine.removeQuarter();
         gumballMachine.insertQuarter();
         gumballMachine.turnCrank();
+        gumballMachine.removeQuarter();
         gumballMachine.insertQuarter();
         gumballMachine.turnCrank();
         gumballMachine.turnCrank();
