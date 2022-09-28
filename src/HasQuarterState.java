@@ -23,7 +23,17 @@ public class HasQuarterState implements State {
 
     @Override
     public void turnCrank() {
+        gumballMachine.numGum --;
         System.out.println("Gumball Delivered!");
         gumballMachine.setState(gumballMachine.getNoQuarterState());
+        if (gumballMachine.numGum == 0) {
+            gumballMachine.setState((gumballMachine.getEmptyState()));
+        }
+        
+    }
+
+    @Override
+    public void refill() {
+        System.out.println("There are still gumballs in the machine.");
     }
 }

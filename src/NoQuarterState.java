@@ -25,4 +25,9 @@ public class NoQuarterState implements State{
     public void turnCrank() {
         System.out.println("Nothing happening, bro");
     }
+
+    @Override
+    public void refill() {
+        System.out.println("There are still gumballs in the machine.");
+    }
 }

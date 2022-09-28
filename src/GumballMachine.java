@@ -6,19 +6,18 @@ public class GumballMachine {
     //private instance variables for each possible state
     private State hasQuarterState;
     private State noQuarterState;
-    private State emptyState;    
+    private State Empty;
+    public int numGum;
+    
     //current state the machine is in
     private State currentState;
-    //number of gumballs in machine
-    private int gumNum;
     
     public GumballMachine() {
         //initialize possible state instance variables
         hasQuarterState = new HasQuarterState(this);
         noQuarterState = new NoQuarterState(this);
-        emptyState = new EmptyState(this);
-        gumNum = 3;
-
+        Empty = new Empty(this);
+        numGum = 3;
         
         //set initial current state
         currentState = noQuarterState;
@@ -28,17 +27,16 @@ public class GumballMachine {
         this.currentState = state;
     }
     
-    public State getEmptyState()
-    {
-        return emptyState;
-    }
-
     public State getHasQuarterState() {
         return hasQuarterState;
     }
     
     public State getNoQuarterState() {
         return noQuarterState;
+    }
+
+    public State getEmptyState() {
+        return Empty;
     }
     
     public void insertQuarter() {
@@ -50,19 +48,10 @@ public class GumballMachine {
     }
     
     public void turnCrank() {
-        if(!emptyState.getEmptyState())
-        {
-            currentState.turnCrank();
-        }
-        else
-        {
-            System.out.println("There are no gumballs left. Refilling...");
-            refill();
-        }
-        emptyState.setEmpty(gumNum);
+        currentState.turnCrank();
     }
-    public void refill()
-    {
-        gumNum = 3;
+
+    public void refill() {
+        currentState.refill();
     }
 }
