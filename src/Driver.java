@@ -18,5 +18,12 @@ public class Driver {
         gumballMachine.insertQuarter();
         gumballMachine.turnCrank();
         gumballMachine.turnCrank();
+        //Modification to test gumball limit
+        gumballMachine.insertQuarter();
+        gumballMachine.turnCrank();
+        gumballMachine.insertQuarter();
+        gumballMachine.turnCrank();
+        gumballMachine.insertQuarter();
+        gumballMachine.turnCrank();
     }
 }
